@@ -1,0 +1,11 @@
+AddDefaultCharset utf-8
+
+RewriteEngine on
+    
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+Options -Indexes
+
+RewriteRule ^(.*)$ index.php?url=$1/ [L,QSA]
