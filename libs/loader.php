@@ -35,11 +35,6 @@ class loader {
             }
         }
     }
-
-    public function getClassmap() {
-        return $this->Classmap;
-    }
-
 }
 
 ?>
