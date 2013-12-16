@@ -17,12 +17,12 @@ class request {
         $qs3 = explode("/", $qs2);
         $this->module = null;
         if (preg_match("/^mo[a-z]+$/i", $qs3[0])) {
-            $this->module = strtolower(substr($qs3[0], 2));
+            $this->module = substr($qs3[0], 2);
             array_shift($qs3);
         }
 
-        $this->controller = !empty($qs3[0]) ? strtolower($qs3[0]) : "Home";
-        $this->action = !empty($qs3[1]) ? strtolower($qs3[1]) : "Index";
+        $this->controller = !empty($qs3[0]) ? $qs3[0] : "Home";
+        $this->action = !empty($qs3[1]) ? $qs3[1] : "Index";
         $this->params = array_slice($qs3, 2);
     }
 
@@ -31,11 +31,11 @@ class request {
     }
 
     public function getcontroller() {
-        return ucfirst($this->controller);
+        return $this->controller;
     }
 
     public function getaction() {
-        return ucfirst($this->action);
+        return $this->action;
     }
 
     public function getparams() {

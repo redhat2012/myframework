@@ -1,11 +1,11 @@
 <?php
 
-namespace framework\app\modules\controllers;
+namespace framework\admin\controllers;
 
 class HomeController {
 
     public function Index() {
-        echo "saeed aghaebrahimian . ";
+        
     }
 
 }
